@@ -32,9 +32,6 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
-(unless (package-installed-p 'clojure-mode)
-  (package-install 'clojure-mode))
-
 (unless (package-installed-p 'rainbow-delimiters)
   (package-install 'rainbow-delimiters))
 
@@ -42,6 +39,7 @@
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 
 (use-package clojure-mode
+  :ensure t
   :init
   (setq clojure-indent-style :align-arguments))
 
@@ -52,9 +50,6 @@
 
 (unless (package-installed-p 'cider)
   (package-install 'cider))
-
-(unless (package-installed-p 'paredit)
-  (package-install 'paredit))
 
 (use-package paredit
   :ensure t

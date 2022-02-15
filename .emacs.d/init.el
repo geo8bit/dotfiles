@@ -14,7 +14,7 @@
  '(rainbow-delimiters-depth-5-face ((t (:inherit rainbow-delimiters-base-face :foreground "magenta"))))
  '(rainbow-delimiters-depth-6-face ((t (:inherit rainbow-delimiters-base-face :foreground "light gray"))))
  '(rainbow-delimiters-depth-7-face ((t (:inherit rainbow-delimiters-base-face :foreground "goldenrod"))))
- '(show-paren-match ((t (:foreground "white" :background "magenta" :weight bold)))))
+ '(show-paren-match ((t (:foreground "#111125" :background "green" :weight bold)))))
 
 (setq-default fill-column 80)
 
@@ -115,3 +115,5 @@
 
 (show-paren-mode 1)
 
+(global-set-key "\M-n"  (lambda () (interactive) (scroll-up   4)) )
+(global-set-key "\M-p"  (lambda () (interactive) (scroll-down 4)) )

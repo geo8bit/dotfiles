@@ -32,8 +32,8 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
-(unless (package-installed-p 'rainbow-delimiters)
-  (package-install 'rainbow-delimiters))
+(use-package rainbow-delimiters
+  :ensure t)
 
 (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
@@ -43,13 +43,13 @@
   :init
   (setq clojure-indent-style :align-arguments))
 
-(unless (package-installed-p 'neotree)
-  (package-install 'neotree))
+(use-package neotree
+  :ensure t)
 
 (global-set-key [f8] 'neotree-toggle)
 
-(unless (package-installed-p 'cider)
-  (package-install 'cider))
+(use-package cider
+  :ensure t)
 
 (use-package paredit
   :ensure t
@@ -105,8 +105,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (rainbow-delimiters paredit parinfer cider use-package neotree clojure-mode))))
+   '(rainbow-delimiters paredit parinfer cider use-package neotree clojure-mode)))
 
 (show-paren-mode 1)
 
